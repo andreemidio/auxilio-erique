@@ -7,20 +7,16 @@ from requests_toolbelt.multipart.encoder import MultipartEncoder
 
 URL =  '  CORRIGIR ISSO'
 
+headers={'Content-Type': 'multipart/form-data'}
 
-multipart_data = MultipartEncoder(
-    fields={
-            'file': ('foto.jpg', open('foto.jpg', 'rb'), 'image/jpeg'),
-            'body':{
+files = {'file': ('foto.jpg', open('foto.jpg', 'rb'),
+                  'body':{
             'speed':'Aooba'
-            }
-           }
-    )
+         }
 
 
 try:
-    res =  requests.post(URL, data=multipart_data,
-                  headers={'Content-Type': multipart_data.content_type})
+    res =  requests.post(url, files=file, headers = headers)
 
 except Exception as e:
     print("Erro ao enviar dados")
