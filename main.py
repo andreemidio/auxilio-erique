@@ -13,10 +13,10 @@ files = {'file': open('foto.jpg', 'rb')}
 
 values = {
     'body':{
-            'speed':'Aooba'
+            'speed':'Aooba'}
 }
 
-try :
+try:
     res =  requests.post(url, files=files, data=values, headers = headers)
     print(res.status_code)
 except Exception as e:
