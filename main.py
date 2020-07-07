@@ -7,7 +7,11 @@ from requests_toolbelt.multipart.encoder import MultipartEncoder
 
 URL =  '  CORRIGIR ISSO'
 
+
+#referência
+#https://stackoverflow.com/questions/22567306/python-requests-file-upload
 headers={'Content-Type': 'multipart/form-data'}
+
 
 files = {'file': ('foto.jpg', open('foto.jpg', 'rb')}
 
