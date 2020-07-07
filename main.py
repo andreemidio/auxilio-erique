@@ -13,17 +13,15 @@ URL =  '  CORRIGIR ISSO'
 headers={'Content-Type': 'multipart/form-data'}
 
 
-files = {'file': ('foto.jpg', open('foto.jpg', 'rb')}
+files = {'file': open('foto.jpg', 'rb')}
 
 values = {
     'body':{
             'speed':'Aooba'
 }
 
-
-try:
+try :
     res =  requests.post(url, files=files, data=values, headers = headers)
     print(res.status_code)
-
 except Exception as e:
-    print("Erro ao enviar dados")
+    print(f"Erro ao enviar dados -->> {e}")
